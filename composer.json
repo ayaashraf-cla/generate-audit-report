@@ -10,13 +10,13 @@
     },
     "require": {
         "php": "^8.2",
-        "laravel/framework": "^11.0|^12.0",
+        "laravel/framework": "^11.0|^12.0|^13.0",
         "laravel/ai": "^0.6|^1.0",
-        "ayaashraf/laravel-rag": "*"
+        "ayaashraf/laravel-rag": "*",
+        "livewire/livewire": "^3.0",
+        "phpoffice/phpspreadsheet": "^3.0|^4.0|^5.0"
     },
     "suggest": {
-        "livewire/livewire": "Required to use the built-in AuditProgress Livewire component (^3.0)",
-        "phpoffice/phpspreadsheet": "Required to analyze XLSX/spreadsheet documents during profiling (^3.0|^4.0|^5.0)"
     },
     "extra": {
         "laravel": {

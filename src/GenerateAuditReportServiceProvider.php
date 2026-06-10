@@ -14,6 +14,8 @@ use Cla\GenerateAuditReport\Services\Document\Summarizers\StructuredFileSummariz
 use Cla\GenerateAuditReport\Services\Document\Summarizers\UnstructuredFileSummarizer;
 use AyaAshraf\LaravelRag\Models\Document;
 use Illuminate\Support\ServiceProvider;
+use Cla\GenerateAuditReport\Contracts\SurveyDataProviderInterface;
+use Cla\GenerateAuditReport\Services\Audit\NullSurveyDataProvider;
 use Livewire\Livewire;
 
 class GenerateAuditReportServiceProvider extends ServiceProvider
@@ -23,6 +25,7 @@ class GenerateAuditReportServiceProvider extends ServiceProvider
         $this->mergeConfigFrom(__DIR__ . '/../config/audit.php', 'audit');
 
         $this->app->bind(AuditReportBuilder::class, AuditReportBuilder::class);
+        $this->app->bind(SurveyDataProviderInterface::class, NullSurveyDataProvider::class);
 
         $this->app->booting(function () {
             $loader = \Illuminate\Foundation\AliasLoader::getInstance();
