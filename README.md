@@ -149,10 +149,14 @@ GEMINI_API_KEY=your_key_here
 EMBEDDING_PROVIDER=gemini
 RAG_VECTOR_CONNECTION=pgsql_vector
 RAG_CHAT_MODEL=gemini-2.5-flash
-#OR
+EMBEDDING_DIMENSIONS=1536
+
+ OR
 OPENAI_API_KEY=your_key_here
 EMBEDDING_PROVIDER=openai
 EMBEDDING_MODEL=text-embedding-3-small
+EMBEDDING_DIMENSIONS=1536
+
 RAG_CHAT_PROVIDERS=openai
 RAG_CHAT_MODEL=gpt-4.1-mini
 # Audit workflow
@@ -166,7 +170,7 @@ QUEUE_CONNECTION=database
 
 
 ```bash
-composer require cla/generate-audit-report
+composer require cla/generate-audit-report:dev-main --with-all-dependencies
 ```
 
 
