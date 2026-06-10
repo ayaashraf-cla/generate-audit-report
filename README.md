@@ -165,7 +165,12 @@ GEMINI_API_KEY=your_key_here
 EMBEDDING_PROVIDER=gemini
 RAG_VECTOR_CONNECTION=pgsql_vector
 RAG_CHAT_MODEL=gemini-2.5-flash
-
+#or
+OPENAI_API_KEY=your_key_here
+EMBEDDING_PROVIDER=openai
+EMBEDDING_MODEL=text-embedding-3-small
+RAG_CHAT_PROVIDERS=openai
+RAG_CHAT_MODEL=gpt-4.1-mini
 # Audit workflow
 AUDIT_QUEUE=audit-workflow
 QUEUE_CONNECTION=database
@@ -175,7 +180,6 @@ QUEUE_CONNECTION=database
 
 ## Step 3 — Install `cla/generate-audit-report`
 
-Once on Packagist:
 
 ```bash
 composer require cla/generate-audit-report
