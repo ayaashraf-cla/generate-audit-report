@@ -43,26 +43,10 @@ $session = GenerateAuditReport::for($contract)
 
 ## Step 1 — Install `ayaashraf/laravel-rag`
 
-### Add the VCS repository
 
-```json
-{
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/ayaashraf-cla/laravelRag"
-        }
-    ],
-    "require": {
-        "ayaashraf/laravel-rag": "dev-main"
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true
-}
-```
 
 ```bash
-composer update ayaashraf/laravel-rag
+composer require ayaashraf/laravel-rag:dev-main --with-all-dependencies
 ```
 
 ### Dual-database architecture
@@ -165,7 +149,7 @@ GEMINI_API_KEY=your_key_here
 EMBEDDING_PROVIDER=gemini
 RAG_VECTOR_CONNECTION=pgsql_vector
 RAG_CHAT_MODEL=gemini-2.5-flash
-#or
+#OR
 OPENAI_API_KEY=your_key_here
 EMBEDDING_PROVIDER=openai
 EMBEDDING_MODEL=text-embedding-3-small
@@ -185,26 +169,7 @@ QUEUE_CONNECTION=database
 composer require cla/generate-audit-report
 ```
 
-Until then (local development via path repository):
 
-```json
-{
-    "repositories": [
-        {
-            "type": "path",
-            "url": "packages/cla/generate-audit-report",
-            "options": { "symlink": true }
-        }
-    ],
-    "require": {
-        "cla/generate-audit-report": "@dev"
-    }
-}
-```
-
-```bash
-composer update cla/generate-audit-report
-```
 
 The service provider is auto-discovered. The `GenerateAuditReport` facade alias is registered automatically at boot — no entry needed in `config/app.php`.
 
