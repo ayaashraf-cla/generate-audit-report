@@ -1,0 +1,33 @@
+{
+    "name": "cla/generate-audit-report",
+    "description": "Multi-step AI audit report generation workflow for Laravel applications",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Cla\\GenerateAuditReport\\": "src/"
+        }
+    },
+    "require": {
+        "php": "^8.2",
+        "laravel/framework": "^11.0|^12.0",
+        "laravel/ai": "^0.6|^1.0",
+        "ayaashraf/laravel-rag": "*"
+    },
+    "suggest": {
+        "livewire/livewire": "Required to use the built-in AuditProgress Livewire component (^3.0)",
+        "phpoffice/phpspreadsheet": "Required to analyze XLSX/spreadsheet documents during profiling (^3.0|^4.0|^5.0)"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Cla\\GenerateAuditReport\\GenerateAuditReportServiceProvider"
+            ],
+            "aliases": {
+                "GenerateAuditReport": "Cla\\GenerateAuditReport\\Facades\\GenerateAuditReport"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
